@@ -15,13 +15,7 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           outputs: dist/snake.svg
 
-      - name: Upload Snake.svg
-        uses: actions/upload-artifact@v3
-        with:
-          name: snake.svg
-          path: dist/snake.svg
-
-      - name: Generate Snake.svg
+      - name: Commit and Push Snake.svg
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
